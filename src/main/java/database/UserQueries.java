@@ -18,7 +18,7 @@ public class UserQueries {
     }
 
     public String updateUser(User u){
-        return "UPDATE User SET username = "+u.getUsername()+", weight = "+u.getWeight()+", height = "+u.getHeight()+", lifestyle = "+u.getLifestyle();
+        return "UPDATE User SET username = '"+u.getUsername()+"', weight = "+u.getWeight()+", height = "+u.getHeight()+", lifestyle = "+u.getLifestyle();
     }
 
     public String getUserByUsername(String uname){

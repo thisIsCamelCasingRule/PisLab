@@ -1,20 +1,21 @@
 import DAO.UserDao;
 import DAO.UserDaoImpl;
-import database.Database;
-import database.UserQueries;
-import models.User;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import models.User;
+import services.UserService;
+
 import java.util.List;
 
 
 public class Fattracker {
     public static void main(String[] args){
 
-        UserDao d = new UserDaoImpl();
-        List<User> userList = d.getAllUsers();
-        System.out.println(userList);
+        UserService us = new UserService();
+        us.addNewMealToLog("apple", 1);
+
+        UserDaoImpl u = new UserDaoImpl();
+        System.out.println(u.getAllUsers());
+       // System.out.println(userList);
 
 
 

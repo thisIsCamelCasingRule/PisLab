@@ -11,7 +11,7 @@ public class MealQueries {
     }
 
     public String insertMeal(Meal m){
-        return "INSERT INTO Meal(name, calories, fats, proteins, carbohydrates) VALUES('" + m.getName() + "','" + m.getCalories()+"',"+m.getFats()+","+m.getProteins()+","+m.getCarbohydrates()+")";
+        return "INSERT INTO Meal(name, calories, fats, proteins, carbohydrates) VALUES('" + m.getName() + "'," + m.getCalories()+","+m.getFats()+","+m.getProteins()+","+m.getCarbohydrates()+")";
     }
 
     public String deleteMeal(Meal m){
@@ -19,11 +19,11 @@ public class MealQueries {
     }
 
     public String updateMeal(Meal m){
-        return "UPDATE User SET name = "+m.getName()+", calories = "+m.getCalories()+", fats = "+m.getFats()+", proteins = "+m.getProteins()+", carbohydrates = "+m.getCarbohydrates();
+        return "UPDATE User SET name = '"+m.getName()+"', calories = "+m.getCalories()+", fats = "+m.getFats()+", proteins = "+m.getProteins()+", carbohydrates = "+m.getCarbohydrates();
     }
 
     public String getMealByName(String uname){
-        return "SELECT * FROM User WHERE username = "+uname+" LIMIT 1";
+        return "SELECT id FROM Meal WHERE name = '"+uname+"'";
     }
 
 }

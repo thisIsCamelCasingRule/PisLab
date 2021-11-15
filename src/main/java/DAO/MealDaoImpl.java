@@ -55,8 +55,23 @@ public class MealDaoImpl implements MealDao{
     }
 
     @Override
-    public Meal getMeal(String username) {
-        return null;
+    public int getMeal(String name) {
+        try {
+            Connection conn = Database.getConnection();
+            Statement st = conn.createStatement();
+            Queries q = new Queries();
+
+            ResultSet r = st.executeQuery(q.mealQueries.getMealByName(name));
+            //System.out.println(r);
+            int mealId = 0;
+            while (r.next()){
+                mealId = r.getInt("id");
+            }
+            return mealId;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     @Override

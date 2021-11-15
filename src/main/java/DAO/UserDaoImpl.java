@@ -66,7 +66,7 @@ public class UserDaoImpl implements DAO.UserDao {
                 temp.setAge(res.getInt("age"));
                 temp.setHeight(res.getDouble("height"));
                 temp.setWeight(res.getDouble("weight"));
-                temp.setMeal_log(res.getInt("meal_log"));
+                //temp.setMeal_log(res.getInt("meal_log"));
                 temp.setLifestyle(res.getInt("lifestyle"));
                 userlist.add(temp);
             }

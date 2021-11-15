@@ -1,5 +1,8 @@
 package database;
 
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.Date;
+
 public class MealLogQueries {
 
     public MealLogQueries(){}
@@ -13,6 +16,6 @@ public class MealLogQueries {
     }
 
     public String InsertNewMeal(int userId, int mealId){
-        return "insert into Meal_log(user_id, meal_id) values(" +userId+ ", " +mealId+ ")";
+        return "insert into Meal_log(user_id, meal_id) values(" +userId+ ", " +mealId+ ")" ;
     }
 }
