@@ -12,8 +12,8 @@ public class Database {
     static final String DATABASE_URL = "jdbc:mysql://localhost:3306/fattracker";
 
     // User and Password
-    static final String USER = "nikita";
-    static final String PASSWORD = "password1";
+    static final String USER = "tracker";
+    static final String PASSWORD = "1234";
 
     public Database(){};
 
