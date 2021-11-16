@@ -16,6 +16,7 @@ import java.util.List;
 
 public class MealDaoImpl implements MealDao{
 
+    // Rewrite it to user service
     @Override
     public List<Meal> getAllUserMeal(int userId) {
         try {
@@ -72,6 +73,31 @@ public class MealDaoImpl implements MealDao{
             e.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public Meal getMealById(int mealId) {
+        try {
+            Connection conn = Database.getConnection();
+            Statement st = conn.createStatement();
+            Queries q = new Queries();
+
+            ResultSet r = st.executeQuery(q.mealQueries.getMealById(mealId));
+
+            Meal tmp = new Meal();
+            while (r.next()){
+                tmp.setId(r.getInt("id"));
+                tmp.setName(r.getString("name"));
+                tmp.setCalories(r.getDouble("calories"));
+                tmp.setFats(r.getDouble("fats"));
+                tmp.setProteins(r.getDouble("proteins"));
+                tmp.setCarbohydrates(r.getDouble("carbohydrates"));
+            }
+            return tmp;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override

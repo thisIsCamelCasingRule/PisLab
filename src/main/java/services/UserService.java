@@ -4,6 +4,10 @@ import DAO.MealDao;
 import DAO.MealDaoImpl;
 import DAO.MealLogDaoImpl;
 import database.Queries;
+import models.Meal;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserService {
 
@@ -30,5 +34,22 @@ public class UserService {
         }
 
         return;
+    }
+
+    public List<Meal> getUserMeal(int userID){
+        MealLogDaoImpl mealLogDao = new MealLogDaoImpl();
+        List<Meal> mealList = new ArrayList<>();
+
+        // Get list of meal ids that user has in meal_log
+        List<Integer> mealIdList = mealLogDao.getAllUserMeal(userID);
+
+        // find the meal in db and parse it to meal list
+        MealDaoImpl mealDao = new MealDaoImpl();
+        for(int i = 0; i < mealIdList.size(); i++){
+            Meal tmpm = mealDao.getMealById(mealIdList.get(i));
+            mealList.add(tmpm);
+        }
+        // return meal list
+        return mealList;
     }
 }
