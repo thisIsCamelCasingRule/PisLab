@@ -4,10 +4,11 @@ import models.User;
 
 import java.util.List;
 
-public interface UserDao {
-    public List<User> getAllUsers();
-    public User getUser(String username);
-    public void updateUser(User u);
-    public void deleteUser(User u);
-    public void insertUser(User u);
+public abstract interface UserDao<T> {
+    public List<T> getAllUsers();
+    public T getUser(String username);
+    public void updateUser(T u);
+    //public T getById(int id);
+    public void deleteUser(T u);
+    public void insertUser(T u);
 }

@@ -3,8 +3,10 @@ package services;
 import DAO.MealDao;
 import DAO.MealDaoImpl;
 import DAO.MealLogDaoImpl;
+import DAO.UserDao;
 import database.Queries;
 import models.Meal;
+import models.User;
 
 import java.util.ArrayList;
 import java.util.List;

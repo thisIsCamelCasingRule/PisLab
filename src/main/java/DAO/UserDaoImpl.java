@@ -12,9 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UserDaoImpl implements DAO.UserDao {
+public class UserDaoImpl implements DAO.UserDao<User> {
 
     public UserDaoImpl(){}
+
 
     @Override
     public void deleteUser(User user) {

@@ -10,6 +10,10 @@ public class MealQueries {
         return "SELECT * FROM Meal where id = "+ mealId;
     }
 
+    public String getAllMeal(){
+        return "select * from Meal";
+    }
+
     public String insertMeal(Meal m){
         return "INSERT INTO Meal(name, calories, fats, proteins, carbohydrates) VALUES('" + m.getName() + "'," + m.getCalories()+","+m.getFats()+","+m.getProteins()+","+m.getCarbohydrates()+")";
     }

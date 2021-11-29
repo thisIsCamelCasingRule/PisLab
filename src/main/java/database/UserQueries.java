@@ -9,6 +9,10 @@ public class UserQueries {
         return "SELECT * FROM User";
     }
 
+    public String getIbByName(String name){
+        return "select id from User where username = '"+name+"'";
+    }
+
     public String insertUser(User u){
         return "INSERT INTO User(username, password, age, weight, height, lifestyle) VALUES('"+u.getUsername()+ "','"+u.getPassword()+"',"+u.getAge()+","+u.getWeight()+","+u.getHeight()+","+u.getLifestyle()+")";
     }
