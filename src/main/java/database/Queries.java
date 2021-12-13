@@ -1,8 +1,5 @@
 package database;
 
-import models.Meal;
-import models.User;
-
 public class Queries {
     public UserQueries userQueries;
     public MealQueries mealQueries;

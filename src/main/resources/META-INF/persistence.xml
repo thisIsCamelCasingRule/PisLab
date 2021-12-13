@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="fattracker"
+                      transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>entity.Meal</class>
+        <class>entity.MealLog</class>
+        <class>entity.User</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/fattracker" />
+            <property name="javax.persistence.jdbc.user" value="tracker" />
+            <property name="javax.persistence.jdbc.password" value="1234" />
+
+            <property name="eclipselink.logging.level" value="FINE" />
+            <property name="eclipselink.ddl-generation" value="create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="my-persistence-unit">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>entity.Meal</class>
+        <class>entity.MealLog</class>
+        <class>entity.User</class>
+        <properties>
+
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/fat"/>
+            <property name="javax.persistence.jdbc.user" value="tracker"/>
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.id.new_generator_mappings" value="false"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,9 +1,7 @@
 package DAO;
 
 import database.Database;
-import database.MealQueries;
 import database.Queries;
-import database.UserQueries;
 import models.Meal;
 import models.User;
 

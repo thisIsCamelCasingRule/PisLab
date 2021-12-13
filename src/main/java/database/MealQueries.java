@@ -6,6 +6,10 @@ public class MealQueries {
 
     public MealQueries(){}
 
+    public String getAllMeal() {
+        return "SELECT * FROM Meal";
+    }
+
     public String getMealById(int mealId) {
         return "SELECT * FROM Meal where id = "+ mealId;
     }

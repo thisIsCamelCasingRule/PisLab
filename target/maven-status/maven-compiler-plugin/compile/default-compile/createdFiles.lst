@@ -1,8 +1,0 @@
-models/User.class
-Fattracker.class
-DAO/UserDaoImpl.class
-api/UserController.class
-database/Database.class
-database/UserQueries.class
-services/UserService.class
-DAO/UserDao.class

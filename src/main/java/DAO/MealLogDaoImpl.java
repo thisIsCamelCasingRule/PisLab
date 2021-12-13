@@ -2,8 +2,6 @@ package DAO;
 
 import database.Database;
 import database.Queries;
-import database.UserQueries;
-import models.User;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

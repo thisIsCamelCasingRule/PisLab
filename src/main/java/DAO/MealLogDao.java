@@ -1,8 +1,5 @@
 package DAO;
 
-import models.Meal;
-import models.User;
-
 import java.util.List;
 
 public interface MealLogDao {
